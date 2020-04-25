@@ -1,0 +1,315 @@
+.BodyBoxClass {
+	height: 100%;
+	/*background-image: url(../image/backg.jpg);*/
+	/*background-repeat: no-repeat;*/
+	/*background-size: 100% 100%;*/
+	/*background-size: cover;*/
+
+}
+
+.navBoxClass {
+
+	background-color: rgba(255, 255, 255, 0.1);
+	padding-bottom: 0rem;
+	margin-bottom: 0rem;
+	border: 0rem;
+	position: relative;
+
+}
+
+.navbar {
+	border: 0rem;
+}
+
+.myLifeClass {
+	margin: 0;
+	margin-left: 1rem;
+	line-height: 100%;
+	font-size: 2rem;
+}
+
+.navBarClass {
+	background-color: rgba(255, 255, 255, 0.1);
+	padding-bottom: 0rem;
+	margin-bottom: 0rem;
+}
+
+.navClass {
+	float: right;
+}
+
+.BigSrceenClass {
+	/*opacity: 0.9;*/
+	min-height: 20rem;
+	max-height: 30rem;
+	background-color: #363c41;
+	color: whitesmoke;
+}
+
+.GodProgram{
+	margin-bottom: 30px;
+}
+
+.ProgramNavClass{
+	border-bottom-color: #0b2e13;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	margin-bottom:10px;
+}
+
+.ProgramNavClass a{
+	color: black;
+	font-size: large;
+}
+
+.card1Class{
+	box-shadow: 0px 4px 6px #0b2e13;
+	margin: 2px;
+	text-decoration: none;
+	color: #0b2e13;
+}
+
+.cardProgramClass a:link{
+	text-decoration: none;
+}
+
+.cardProgramClass a:hover{
+	text-decoration: none;
+}
+.GoodPClass{
+	margin-bottom: 30px;
+}
+.ArticleNavClass{
+	border-bottom-color: #0b2e13;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	margin-bottom:10px;
+}
+
+.ArticleNavClass a{
+	color: black;
+	font-size: large;
+}
+
+.ArticleClass{
+	margin-bottom:10px;
+	box-shadow: 0px 4px 6px #0b2e13;
+}
+.ArticleClass a{
+	text-decoration: none;
+	color: #0b2e13;
+}
+
+.ArticleClass a:link{
+	text-decoration: none;
+}
+
+.ArticleClass a:hover{
+	text-decoration: none;
+}
+
+.skill{
+	margin-bottom: 30px;
+}
+
+.DefineInfo {
+	height: 10rem;
+	/* background-color: #5f666a; */
+}
+
+.lifeClass{
+	border-left-width: 5px;
+	margin: 2px;
+	text-decoration: none;
+	color: #0b2e13;
+}
+
+.lifeClass:hover{
+	text-decoration: none;
+}
+
+.livePhotoClass{
+	text-decoration: none;
+}
+
+.livePhotoClass:link{
+	text-decoration: none;
+}
+
+.livePhotoClass:hover{
+	text-decoration: none;
+	color: #0b2e13;
+}
+
+
+/* 页面底部样式 */
+.DefineInfo {
+	border-top: 0px solid #42ad46;
+	margin-top: 2.5rem;
+
+}
+
+.foot_link {
+	text-align: center;
+	margin-top: 30px;
+}
+
+.foot_link a,
+.foot_link span {
+	color: #4e4e4e;
+}
+
+.foot_link a:hover {
+	color: #ff8800
+}
+
+.foot_link span {
+	padding: 0 10px
+}
+
+.DefineInfo p {
+	text-align: center;
+	margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+/* ------------------------分界线------------------------- */
+.resumeBigScreenClass {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	position: relative;
+	max-height: 100rem;
+	margin-bottom: 0rem;
+	border-bottom: 0.5rem solid rgba(166, 166, 166, 1);
+}
+
+/* 个人简介中个人头像 */
+.resumePhotoClass {
+	margin: auto;
+	height: 20rem;
+	text-align: center;
+	
+
+}
+
+/* 设置图片的宽度和高度 */
+.resumePhotoClass img {
+	width: 15rem;
+	height: 20rem;
+	border: 0.9375rem solid rgba(255, 255, 255, .5);
+	/* 阴影效果 */
+	box-shadow: 0.1875rem 0.9375rem 0.625rem #5f666a;
+	
+}
+
+/* 个人主页姓名 */
+.personName {
+	text-align: center;
+	margin-top: 1.9375rem;
+	margin-bottom: 1rem;
+}
+
+/* 个人主页个人职业 */
+.personProfession {
+	margin-top: 0rem;
+	font-size: 1.5rem;
+}
+
+/* 个人简介 */
+.introduce {
+	position: absolute;
+	bottom: 1.875rem;
+	left: 10rem;
+	float: left;
+	text-align: left;
+}
+
+/* 个人简介字体 */
+.introduce h5 {
+	display: inline-block;
+	margin: 0rem;
+}
+
+.resumeBodyClass {
+	display: block;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+.maxClass{
+	overflow: hidden;
+}
+/* 主题展示内容,左栏的格式 */
+.leftCol {
+	border-left: 0.375rem solid rgba(255, 255, 255, .5);
+	
+}
+
+/* 左侧栏中清除格式 */
+.leftCol li{
+	float: left;
+	margin: 0rem;
+	padding: 0rem;
+	list-style: none;
+}
+
+/* 设置最近工作上间距为1rem,最小宽度为10rem,定位为相对定位 */
+.workTitle{
+	margin-top: 1rem;
+	overflow: hidden;
+	min-width: 10rem;
+	position: relative;
+}
+
+/* 加粗最近工作 */
+.workTitle h5{
+	font-weight: bold;
+}
+
+/* 清除格式 */
+.workTitle ul{
+	overflow: hidden;
+	margin-bottom: 0rem;
+	margin-left: 1rem;
+	border: 0rem;
+	padding-left: 0rem;
+	color: #717171;
+}
+
+.workTitle ul li{
+	
+}
+/* 对最近工作内容中标题进行加粗 */
+.workTitle span{
+	font-weight: bold;
+}
+
+/* 对最近工作图标进行设置,设置为绝对位置 */
+.workTitleIcon{
+	position: absolute;
+	top: 1.8rem;
+	left: -1.25rem;	
+}
+
+/* 设置图标大小 */
+.workTitleIcon .workTitleIcon1{
+	font-size: 2rem;
+}
+
+
+
+.workTitle .progress-bar{
+	height: 1.25rem;
+	display: inline-block;
+}
+
