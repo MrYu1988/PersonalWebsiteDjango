@@ -26,6 +26,8 @@ class SubProgram(BaseModel):
     SubProgramName = models.CharField(max_length=64, verbose_name='子项目名称')
     SubProgramBrief = models.CharField(max_length=256, verbose_name='子项目简介')
     SubProgramId = models.ForeignKey('BigProgram', verbose_name='子项目编号', on_delete=models.CASCADE)
+    SubProgramDoc = models.FileField(upload_to='doc', null=True)
+    SubProgramHtml = models.FileField(upload_to='Html', blank=True, null=True)
 
     class Meta:
         db_table = 'df_SubProgram'

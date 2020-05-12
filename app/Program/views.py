@@ -15,3 +15,10 @@ class ProgramWeb(View):
         #  将查询到的项目放入网页中
         context = {'Programs':Programs}
         return render(request, 'Program.html', context)
+
+
+class SubProgramDetail(View):
+    def get(self, request, ProgramID, SubProgramID):
+        print(ProgramID)
+        print(SubProgramID)
+        return render(request, 'ProgramContext.html')
