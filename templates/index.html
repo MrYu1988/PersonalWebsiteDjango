@@ -41,7 +41,7 @@
                             <a class="nav-link" href="{% url 'article' %}">Article</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Life</a>
+                            <a class="nav-link" href="{% url 'life' %}">Life</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Annalistic</a>
@@ -58,7 +58,9 @@
             <h1 class="display-4">WELCOME！</h1>
             <p class="lead">钢是在烈火里燃烧、高度冷却中炼成的，因此它很坚固。我们这一代人也是在斗争中和艰苦考验中锻炼出来的，并且学会了在生活中从不灰心丧气。</p>
             <hr class="my-4">
-            <p>Don't be afraid to shoot a single horse. What about being alone and brave? You can cry all the way, but you can't be angry. You have to go through the days when nobody cares about it to welcome applause and flowers.</p>
+            <p>Don't be afraid to shoot a single horse. What about being alone and brave? You can cry all the way, but
+                you can't be angry. You have to go through the days when nobody cares about it to welcome applause and
+                flowers.</p>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
                 Know me!
             </button>
@@ -75,45 +77,44 @@
             </div>
             <div class="row justify-content-between">
                 {% for BigProgram in BigProgramtemp %}
-                <div class="col-md-6 cardProgramClass">
-                    <a href="{% url 'programUnqul' BigProgram.id %}" class="card mb-3 card1Class text-decoration-none " style="">
-                        <div class="row no-gutters">
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ BigProgram.ProgramName }}</h5>
-                                    <p class="card-text">{{ BigProgram.ProgramBrief }}</p>
-                                    <p class="card-text"><small class="text-muted">Last updated {{ BigProgram.update_time }}</small></p>
+                    <div class="col-md-6 cardProgramClass">
+                        <a href="{% url 'programUnqul' BigProgram.id %}"
+                           class="card mb-3 card1Class text-decoration-none " style="">
+                            <div class="row no-gutters">
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ BigProgram.ProgramName }}</h5>
+                                        <p class="card-text">{{ BigProgram.ProgramBrief }}</p>
+                                        <p class="card-text"><small class="text-muted">Last
+                                            updated {{ BigProgram.update_time }}</small></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <img src="/media/{{ BigProgram.ProgramIcon }}" class="card-img" alt="这是一个项目图标">
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <img src="/media/{{ BigProgram.ProgramIcon }}" class="card-img" alt="这是一个项目图标">
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                    {% empty %} <h3>无相关内容！</h3>
+                        </a>
+                    </div>
+                {% empty %} <h3>无相关内容！</h3>
                 {% endfor %}
-{#                <div class="col-md-6 cardProgramClass">#}
-{#                    <a href="#" class="card mb-3 card1Class" style="">#}
-{#                        <div class="row no-gutters">#}
-{#                            <div class="col-md-8">#}
-{#                                <div class="card-body">#}
-{#                                    <h5 class="card-title">Card title</h5>#}
-{#                                    <p class="card-text">This is a wider card with supporting text below as a natural#}
-{#                                        lead-in to#}
-{#                                        additional content. This content is a little bit longer.</p>#}
-{#                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <div class="col-md-4">#}
-{#                                <img src="/static/image/1.jpg" class="card-img" alt="...">#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </a>#}
-{#                </div>#}
-
-
-
+                {#                <div class="col-md-6 cardProgramClass">#}
+                {#                    <a href="#" class="card mb-3 card1Class" style="">#}
+                {#                        <div class="row no-gutters">#}
+                {#                            <div class="col-md-8">#}
+                {#                                <div class="card-body">#}
+                {#                                    <h5 class="card-title">Card title</h5>#}
+                {#                                    <p class="card-text">This is a wider card with supporting text below as a natural#}
+                {#                                        lead-in to#}
+                {#                                        additional content. This content is a little bit longer.</p>#}
+                {#                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>#}
+                {#                                </div>#}
+                {#                            </div>#}
+                {#                            <div class="col-md-4">#}
+                {#                                <img src="/static/image/1.jpg" class="card-img" alt="...">#}
+                {#                            </div>#}
+                {#                        </div>#}
+                {#                    </a>#}
+                {#                </div>#}
 
 
             </div>
@@ -129,30 +130,29 @@
                 </ul>
             </div>
             {% for Article in ArticleModelsTmp %}
-            <div class="ArticleClass">
-                <a href="{% url 'articleDetil' Article.id %}" class="card">
-                    <h5 class="card-header">{{ Article.ArticleName }}</h5>
-                    <div class="card-body">
-                        <p class="card-text font-weight-light">
-                            {{ Article.ArticleBrief }}
-                        </p>
-                    </div>
-                </a>
-            </div>
-                {% empty %} <h2>文章内容为空</h2>
+                <div class="ArticleClass">
+                    <a href="{% url 'articleDetil' Article.id %}" class="card">
+                        <h5 class="card-header">{{ Article.ArticleName }}</h5>
+                        <div class="card-body">
+                            <p class="card-text font-weight-light">
+                                {{ Article.ArticleBrief }}
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            {% empty %} <h2>文章内容为空</h2>
             {% endfor %}
 
-{#            <div class="ArticleClass">#}
-{#                <a href="#" class="card">#}
-{#                    <h5 class="card-header">今天天气很美好</h5>#}
-{#                    <div class="card-body">#}
-{#                        <p class="card-text font-weight-light"> 孤田#}
-{#                            第一次给舅公上坟，走过那丘长长的弯弯的阴冷的荒田，我免不了忆起当年劳动的场景。栽秧薅秧打谷，集体中醒目的与不露声色的勤快、躲懒，开玩笑，一幕幕从眼前走过。#}
-{#                            眼下比较平整的田还没有犁开，杂草一团一团的，涂抹着初春的痕迹。</p>#}
-{#                    </div>#}
-{#                </a>#}
-{#            </div>#}
-
+            {#            <div class="ArticleClass">#}
+            {#                <a href="#" class="card">#}
+            {#                    <h5 class="card-header">今天天气很美好</h5>#}
+            {#                    <div class="card-body">#}
+            {#                        <p class="card-text font-weight-light"> 孤田#}
+            {#                            第一次给舅公上坟，走过那丘长长的弯弯的阴冷的荒田，我免不了忆起当年劳动的场景。栽秧薅秧打谷，集体中醒目的与不露声色的勤快、躲懒，开玩笑，一幕幕从眼前走过。#}
+            {#                            眼下比较平整的田还没有犁开，杂草一团一团的，涂抹着初春的痕迹。</p>#}
+            {#                    </div>#}
+            {#                </a>#}
+            {#            </div>#}
 
 
         </div>
@@ -175,7 +175,7 @@
             <div class="ArticleNavClass">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><h4>Life</h4></a>
+                        <a class="nav-link" href="{% url 'life' %}"><h4>Life</h4></a>
                     </li>
                 </ul>
             </div>
@@ -206,7 +206,6 @@
                             <p class="card-text">这个是美好照片</p>
                         </div>
                     </div>
-
                 </a>
                 <a class="col-md-3" href="#">
                     <div class="card lifeClass" style="">
@@ -215,7 +214,6 @@
                             <p class="card-text">这个是美好照片</p>
                         </div>
                     </div>
-
                 </a>
             </div>
         </div>
@@ -226,7 +224,8 @@
 
 <!--模态框-->
 
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -238,10 +237,10 @@
             <div class="modal-body">
                 <p>2020年全年计划:<br>
                     1、熟练掌握人工智能、并成功应用，视觉和NLP等；<br>
-                2、了解管道的整个流程，依据一个项目，并能自己编写相关代码；<br>
-                3、熟练应用ROS机器人系统，相关代码并在相关板子上有应用；<br>
-                --------------------------------------------<br>
-                学习、强大、人外有人、天外有天！<br><br><br><br>
+                    2、了解管道的整个流程，依据一个项目，并能自己编写相关代码；<br>
+                    3、熟练应用ROS机器人系统，相关代码并在相关板子上有应用；<br>
+                    --------------------------------------------<br>
+                    学习、强大、人外有人、天外有天！<br><br><br><br>
                     2020年我们会更好！你好，今天。
                 </p>
             </div>

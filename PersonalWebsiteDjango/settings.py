@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'Ability',
     'Article',
     'Program',
+    'Life',
 ]
 
 MIDDLEWARE = [

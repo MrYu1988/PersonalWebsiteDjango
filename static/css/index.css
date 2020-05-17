@@ -172,144 +172,231 @@
 	margin-top: 10px;
 }
 
+/*--------------------照片墙------------------------*/
+.photowall{
+	position: relative;
+
+	height: 100%; width: 100%;
 
 
+	display: -webkit-box; /*使用CSS3的盒模型之流式布局*/
+	display: -moz-box;
+	display: box;
 
+	-webkit-box-pack:center; /*定义盒模型内部元素在水平方向上居于中间位置*/
+	-moz-box-pack:center;
+	-o-box-pack:center;
+	-ms-box-pack:center;
+	box-pack:center;
 
+	-webkit-box-align:center; /*定义盒模型内部元素在垂直方向上居于中间位置*/
+	-moz-box-align:center;
+	-o-box-align:center;
+	-ms-box-align:center;
+	box-align:center;
+}
+
+.photoview{
+	position: relative;
+	background-color:#f2eada;
+	margin: 5px;
+	padding:10px 10px 20px 10px;
+	text-align: center;
+	font-size:20px;
+	box-shadow:.2em .2em .8em #130c0e; /*给照片添加阴影效果，富有立体感*/
+}
+
+/*.photoview p{*/
+/*	margin-top:5px;  !*设置照片内显示文字段落的外上边距*!*/
+/*}*/
+
+.photo01{
+	-weikit-transform-origin:right bottom; /*设置右下角为旋转基准点 */
+	-moz-transform-origin:right bottom;
+	-o-transform-origin:right bottom;
+	-ms-transform-origin:right bottom;
+	transform-origin:right bottom;
+
+	transform:rotate(10deg); /*以右下角为基准点顺时针旋转10°*/
+	-webkit-transform:rotate(10deg);
+	-moz-transform:rotate(10deg);
+	-o-transform:rotate(10deg);
+	-ms-transform:rotate(10deg);
+}
+.photo02{
+	-weikit-transform-origin:right bottom; /*设置右下角为旋转基准点 */
+	-moz-transform-origin:right bottom;
+	-o-transform-origin:right bottom;
+	-ms-transform-origin:right bottom;
+	transform-origin:right bottom;
+
+	transform:rotate(-20deg); /*以右下角为基准点逆时针旋转20°*/
+	-webkit-transform:rotate(-20deg);
+	-moz-transform:rotate(-20deg);
+	-o-transform:rotate(-20deg);
+	-ms-transform:rotate(-20deg);
+}
+
+.photo03{
+	-weikit-transform-origin:left top; /*设置左上角为旋转基准点 */
+	-moz-transform-origin:left top;
+	-o-transform-origin:left top;
+	-ms-transform-origin:left top;
+	transform-origin:left top;
+
+	transform:rotate(20deg); /*以左上角为基准点顺时针旋转20°*/
+	-webkit-transform:rotate(20deg);
+	-moz-transform:rotate(20deg);
+	-o-transform:rotate(20deg);
+	-ms-transform:rotate(20deg);
+}
+.photo04{
+	-weikit-transform-origin:left bottom; /*设置左下角为旋转基准点 */
+	-moz-transform-origin:left bottom;
+	-o-transform-origin:left bottom;
+	-ms-transform-origin:left bottom;
+	transform-origin:left bottom;
+
+	transform:rotate(-20deg); /*以左下角为基准点逆时针旋转20°*/
+	-webkit-transform:rotate(-20deg);
+	-moz-transform:rotate(-20deg);
+	-o-transform:rotate(-20deg);
+	-ms-transform:rotate(-20deg);
+}
 
 
 
 /* ------------------------分界线------------------------- */
-.resumeBigScreenClass {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	position: relative;
-	max-height: 100rem;
-	margin-bottom: 0rem;
-	border-bottom: 0.5rem solid rgba(166, 166, 166, 1);
-}
+/*.resumeBigScreenClass {*/
+/*	display: flex;*/
+/*	flex-direction: row;*/
+/*	justify-content: center;*/
+/*	align-items: center;*/
+/*	text-align: center;*/
+/*	position: relative;*/
+/*	max-height: 100rem;*/
+/*	margin-bottom: 0rem;*/
+/*	border-bottom: 0.5rem solid rgba(166, 166, 166, 1);*/
+/*}*/
 
-/* 个人简介中个人头像 */
-.resumePhotoClass {
-	margin: auto;
-	height: 20rem;
-	text-align: center;
-	
-
-}
-
-/* 设置图片的宽度和高度 */
-.resumePhotoClass img {
-	width: 15rem;
-	height: 20rem;
-	border: 0.9375rem solid rgba(255, 255, 255, .5);
-	/* 阴影效果 */
-	box-shadow: 0.1875rem 0.9375rem 0.625rem #5f666a;
-	
-}
-
-/* 个人主页姓名 */
-.personName {
-	text-align: center;
-	margin-top: 1.9375rem;
-	margin-bottom: 1rem;
-}
-
-/* 个人主页个人职业 */
-.personProfession {
-	margin-top: 0rem;
-	font-size: 1.5rem;
-}
-
-/* 个人简介 */
-.introduce {
-	position: absolute;
-	bottom: 1.875rem;
-	left: 10rem;
-	float: left;
-	text-align: left;
-}
-
-/* 个人简介字体 */
-.introduce h5 {
-	display: inline-block;
-	margin: 0rem;
-}
-
-.resumeBodyClass {
-	display: block;
-	height: 100%;
-	position: relative;
-	overflow: hidden;
-}
-
-.maxClass{
-	overflow: hidden;
-}
-/* 主题展示内容,左栏的格式 */
-.leftCol {
-	border-left: 0.375rem solid rgba(255, 255, 255, .5);
-	
-}
-
-/* 左侧栏中清除格式 */
-.leftCol li{
-	float: left;
-	margin: 0rem;
-	padding: 0rem;
-	list-style: none;
-}
-
-/* 设置最近工作上间距为1rem,最小宽度为10rem,定位为相对定位 */
-.workTitle{
-	margin-top: 1rem;
-	overflow: hidden;
-	min-width: 10rem;
-	position: relative;
-}
-
-/* 加粗最近工作 */
-.workTitle h5{
-	font-weight: bold;
-}
-
-/* 清除格式 */
-.workTitle ul{
-	overflow: hidden;
-	margin-bottom: 0rem;
-	margin-left: 1rem;
-	border: 0rem;
-	padding-left: 0rem;
-	color: #717171;
-}
-
-.workTitle ul li{
-	
-}
-/* 对最近工作内容中标题进行加粗 */
-.workTitle span{
-	font-weight: bold;
-}
-
-/* 对最近工作图标进行设置,设置为绝对位置 */
-.workTitleIcon{
-	position: absolute;
-	top: 1.8rem;
-	left: -1.25rem;	
-}
-
-/* 设置图标大小 */
-.workTitleIcon .workTitleIcon1{
-	font-size: 2rem;
-}
+/*!* 个人简介中个人头像 *!*/
+/*.resumePhotoClass {*/
+/*	margin: auto;*/
+/*	height: 20rem;*/
+/*	text-align: center;*/
 
 
+/*}*/
 
-.workTitle .progress-bar{
-	height: 1.25rem;
-	display: inline-block;
-}
+/*!* 设置图片的宽度和高度 *!*/
+/*.resumePhotoClass img {*/
+/*	width: 15rem;*/
+/*	height: 20rem;*/
+/*	border: 0.9375rem solid rgba(255, 255, 255, .5);*/
+/*	!* 阴影效果 *!*/
+/*	box-shadow: 0.1875rem 0.9375rem 0.625rem #5f666a;*/
+
+/*}*/
+
+/*!* 个人主页姓名 *!*/
+/*.personName {*/
+/*	text-align: center;*/
+/*	margin-top: 1.9375rem;*/
+/*	margin-bottom: 1rem;*/
+/*}*/
+
+/*!* 个人主页个人职业 *!*/
+/*.personProfession {*/
+/*	margin-top: 0rem;*/
+/*	font-size: 1.5rem;*/
+/*}*/
+
+/*!* 个人简介 *!*/
+/*.introduce {*/
+/*	position: absolute;*/
+/*	bottom: 1.875rem;*/
+/*	left: 10rem;*/
+/*	float: left;*/
+/*	text-align: left;*/
+/*}*/
+
+/*!* 个人简介字体 *!*/
+/*.introduce h5 {*/
+/*	display: inline-block;*/
+/*	margin: 0rem;*/
+/*}*/
+
+/*.resumeBodyClass {*/
+/*	display: block;*/
+/*	height: 100%;*/
+/*	position: relative;*/
+/*	overflow: hidden;*/
+/*}*/
+
+/*.maxClass{*/
+/*	overflow: hidden;*/
+/*}*/
+/*!* 主题展示内容,左栏的格式 *!*/
+/*.leftCol {*/
+/*	border-left: 0.375rem solid rgba(255, 255, 255, .5);*/
+
+/*}*/
+
+/*!* 左侧栏中清除格式 *!*/
+/*.leftCol li{*/
+/*	float: left;*/
+/*	margin: 0rem;*/
+/*	padding: 0rem;*/
+/*	list-style: none;*/
+/*}*/
+
+/*!* 设置最近工作上间距为1rem,最小宽度为10rem,定位为相对定位 *!*/
+/*.workTitle{*/
+/*	margin-top: 1rem;*/
+/*	overflow: hidden;*/
+/*	min-width: 10rem;*/
+/*	position: relative;*/
+/*}*/
+
+/*!* 加粗最近工作 *!*/
+/*.workTitle h5{*/
+/*	font-weight: bold;*/
+/*}*/
+
+/*!* 清除格式 *!*/
+/*.workTitle ul{*/
+/*	overflow: hidden;*/
+/*	margin-bottom: 0rem;*/
+/*	margin-left: 1rem;*/
+/*	border: 0rem;*/
+/*	padding-left: 0rem;*/
+/*	color: #717171;*/
+/*}*/
+
+/*.workTitle ul li{*/
+
+/*}*/
+/*!* 对最近工作内容中标题进行加粗 *!*/
+/*.workTitle span{*/
+/*	font-weight: bold;*/
+/*}*/
+
+/*!* 对最近工作图标进行设置,设置为绝对位置 *!*/
+/*.workTitleIcon{*/
+/*	position: absolute;*/
+/*	top: 1.8rem;*/
+/*	left: -1.25rem;*/
+/*}*/
+
+/*!* 设置图标大小 *!*/
+/*.workTitleIcon .workTitleIcon1{*/
+/*	font-size: 2rem;*/
+/*}*/
+
+
+
+/*.workTitle .progress-bar{*/
+/*	height: 1.25rem;*/
+/*	display: inline-block;*/
+/*}*/
 

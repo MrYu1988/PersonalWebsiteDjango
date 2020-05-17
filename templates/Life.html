@@ -9,9 +9,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="/static/css/index.css">
-    <script type="text/javascript" src="/static/js/echarts.min.js"></script>
     <script type="text/javascript" src="/static/js/jquery-3.4.1.min.js"></script>
-    <script type="text/javascript" src="/static/js/echartsEx.js"></script>
+
     <!--    <script type="text/javascript" src="./js/index.js"></script>-->
 
     <title>Small Tadpole</title>
@@ -21,7 +20,7 @@
     <div class="row justify-content-md-center">
         <div class="col-md-12">
             <nav class="navbar navbar-expand-lg navbar-light bg-light row justify-content-between">
-                <a class="navbar-brand col-5" href="#">A Small Tadpole</a>
+                <a class="navbar-brand col-5" href="{% url 'index' %}">A Small Tadpole</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -34,13 +33,13 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'program' %}">Program</a>
                         </li>
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link" href="{% url 'ability' %}">Ability</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'article' %}">Article</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item active">
                             <a class="nav-link" href="{% url 'life' %}">Life</a>
                         </li>
                         <li class="nav-item">
@@ -55,25 +54,59 @@
         </div>
 
         <div class="jumbotron BigSrceenClass">
-            <h1 class="display-4">Ability</h1>
+            <h1 class="display-4">WELCOME！</h1>
             <p class="lead">钢是在烈火里燃烧、高度冷却中炼成的，因此它很坚固。我们这一代人也是在斗争中和艰苦考验中锻炼出来的，并且学会了在生活中从不灰心丧气。</p>
+            <hr class="my-4">
         </div>
 
-             <!--技能-->
-        <div class="skill col-md-12">
+        <!--生活-->
+        <div class="live col-md-12">
             <div class="ArticleNavClass">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'ability' %}"><h4>Ability</h4></a>
+                        <a class="nav-link" href="#"><h4>Life</h4></a>
                     </li>
                 </ul>
             </div>
+            <div class="row">
 
-            <div id="main" class="col-md-12" style="height: 500px"></div>
+                <a class="col-md-3 livePhotoClass" href="#">
+                    <div class="card lifeClass" style="">
+                        <img src="/static/image/1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">这个是美好照片</p>
+                        </div>
+                    </div>
+
+                </a>
+                <a class="col-md-3" href="#">
+                    <div class="card lifeClass" style="">
+                        <img src="/static/image/1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">这个是美好照片</p>
+                        </div>
+                    </div>
+
+                </a>
+                <a class="col-md-3" href="#">
+
+                    <div class="card lifeClass" style="">
+                        <img src="/static/image/1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">这个是美好照片</p>
+                        </div>
+                    </div>
+                </a>
+                <a class="col-md-3" href="#">
+                    <div class="card lifeClass" style="">
+                        <img src="/static/image/1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">这个是美好照片</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
         </div>
-
-
-
     </div>
 </div>
 </div>
