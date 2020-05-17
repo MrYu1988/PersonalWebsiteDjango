@@ -17,5 +17,5 @@ from django.urls import path, include
 from index.views import index
 
 urlpatterns = [
-    path('', index.as_view()),
+    path('', index.as_view(), name='index'),
 ]

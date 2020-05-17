@@ -17,6 +17,6 @@ from django.urls import path, include
 from Article.views import Article, ArticleDetail
 
 urlpatterns = [
-    path('', Article.as_view()),
-    path('<int:ArticleID>', ArticleDetail.as_view())
+    path('', Article.as_view(), name='article'),
+    path('<int:ArticleID>', ArticleDetail.as_view(), name='articleDetil')
 ]

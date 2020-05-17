@@ -42,3 +42,18 @@ class SubProgramDetail(View):
         context = {'body': tempstr,
                    'SubProgram':SubPrograms[0]}
         return render(request, 'ProgramContext.html', context)
+
+
+class SubProgramUnqul(View):
+    def get(self, request, ProgramID):
+        # 查询大项目名称
+        Programs = BigProgram.objects.filter(id=ProgramID).order_by('update_time')
+        # 依据大项目名称查找大项目下的子项目名称和类别
+        for Program in Programs:
+            SubPrograms = SubProgram.objects.filter(SubProgramId=Program).order_by('update_time')
+            Program.SubPrograms = SubPrograms
+
+        #  将查询到的项目放入网页中
+        context = {'Programs':Programs}
+        return render(request, 'Program.html', context)
+

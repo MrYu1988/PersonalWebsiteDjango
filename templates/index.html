@@ -21,7 +21,7 @@
     <div class="row justify-content-md-center">
         <div class="col-md-12">
             <nav class="navbar navbar-expand-lg navbar-light bg-light row justify-content-between">
-                <a class="navbar-brand col-5" href="#">A Small Tadpole</a>
+                <a class="navbar-brand col-5" href="{% url 'index' %}">A Small Tadpole</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -29,16 +29,16 @@
                 <div class="collapse navbar-collapse col-6" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item active">
-                            <a class="nav-link" href="../index">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../program">Program</a>
+                            <a class="nav-link" href="{% url 'program' %}">Program</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Ability</a>
+                            <a class="nav-link" href="{% url 'ability' %}">Ability</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../article">Article</a>
+                            <a class="nav-link" href="{% url 'article' %}">Article</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Life</a>
@@ -69,87 +69,52 @@
             <div class="ProgramNavClass">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><h4>Program</h4></a>
+                        <a class="nav-link" href="{% url 'program' %}"><h4>Program</h4></a>
                     </li>
                 </ul>
             </div>
             <div class="row justify-content-between">
+                {% for BigProgram in BigProgramtemp %}
                 <div class="col-md-6 cardProgramClass">
-                    <a href="#" class="card mb-3 card1Class text-decoration-none " style="">
+                    <a href="{% url 'programUnqul' BigProgram.id %}" class="card mb-3 card1Class text-decoration-none " style="">
                         <div class="row no-gutters">
                             <div class="col-md-8">
                                 <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural
-                                        lead-in to
-                                        additional content. This content is a little bit longer.</p>
-                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                    <h5 class="card-title">{{ BigProgram.ProgramName }}</h5>
+                                    <p class="card-text">{{ BigProgram.ProgramBrief }}</p>
+                                    <p class="card-text"><small class="text-muted">Last updated {{ BigProgram.update_time }}</small></p>
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <img src="/static/image/1.jpg" class="card-img" alt="这是一个文章">
-                            </div>
-                        </div>
-                    </a>
-
-                </div>
-                <div class="col-md-6 cardProgramClass">
-                    <a href="#" class="card mb-3 card1Class" style="">
-                        <div class="row no-gutters">
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural
-                                        lead-in to
-                                        additional content. This content is a little bit longer.</p>
-                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <img src="/static/image/1.jpg" class="card-img" alt="...">
+                                <img src="/media/{{ BigProgram.ProgramIcon }}" class="card-img" alt="这是一个项目图标">
                             </div>
                         </div>
                     </a>
                 </div>
+                    {% empty %} <h3>无相关内容！</h3>
+                {% endfor %}
+{#                <div class="col-md-6 cardProgramClass">#}
+{#                    <a href="#" class="card mb-3 card1Class" style="">#}
+{#                        <div class="row no-gutters">#}
+{#                            <div class="col-md-8">#}
+{#                                <div class="card-body">#}
+{#                                    <h5 class="card-title">Card title</h5>#}
+{#                                    <p class="card-text">This is a wider card with supporting text below as a natural#}
+{#                                        lead-in to#}
+{#                                        additional content. This content is a little bit longer.</p>#}
+{#                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="col-md-4">#}
+{#                                <img src="/static/image/1.jpg" class="card-img" alt="...">#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </a>#}
+{#                </div>#}
 
-                <div class="col-md-6 cardProgramClass">
-                    <a href="#" class="card mb-3 card1Class" style="">
-                        <div class="row no-gutters">
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural
-                                        lead-in to
-                                        additional content. This content is a little bit longer.</p>
-                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <img src="/static/image/1.jpg" class="card-img" alt="...">
-                            </div>
-                        </div>
-                    </a>
 
-                </div>
 
-                <div class="col-md-6 cardProgramClass">
-                    <a href="#" class="card mb-3 card1Class" style="">
-                        <div class="row no-gutters">
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural
-                                        lead-in to
-                                        additional content. This content is a little bit longer.</p>
-                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <img src="/static/image/2.jpg" class="card-img" alt="...">
-                            </div>
-                        </div>
-                    </a>
-                </div>
+
 
             </div>
         </div>
@@ -159,41 +124,36 @@
             <div class="ArticleNavClass">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><h4>Article</h4></a>
+                        <a class="nav-link" href="{% url 'article' %}"><h4>Article</h4></a>
                     </li>
                 </ul>
             </div>
-
+            {% for Article in ArticleModelsTmp %}
             <div class="ArticleClass">
-                <a href="#" class="card">
-                    <h5 class="card-header">散文三世</h5>
+                <a href="{% url 'articleDetil' Article.id %}" class="card">
+                    <h5 class="card-header">{{ Article.ArticleName }}</h5>
                     <div class="card-body">
                         <p class="card-text font-weight-light">
-                            过了谷雨节气，就是立夏的开始了。春天的气息肆意的舒展与连绵不绝，坚韧韧性的倔强的力量在绘制着宏伟而瑰丽的图卷。春天的爱情故事若潮水一般汹涌澎湃，每一个漩涡都那么硬朗的在艰难与焦灼里微笑着，点点的微光照亮了思流的苦涩。每一个民族的天空都拥有着晴云朵朵酸甜的笑纹横亘过岁月的沉淀与洗礼，澄澈的阳光晶莹的散发着浓浓的暖意。</p>
+                            {{ Article.ArticleBrief }}
+                        </p>
                     </div>
                 </a>
             </div>
+                {% empty %} <h2>文章内容为空</h2>
+            {% endfor %}
 
-            <div class="ArticleClass">
-                <a href="#" class="card">
-                    <h5 class="card-header">今天天气很美好</h5>
-                    <div class="card-body">
-                        <p class="card-text font-weight-light"> 孤田
-                            第一次给舅公上坟，走过那丘长长的弯弯的阴冷的荒田，我免不了忆起当年劳动的场景。栽秧薅秧打谷，集体中醒目的与不露声色的勤快、躲懒，开玩笑，一幕幕从眼前走过。
-                            眼下比较平整的田还没有犁开，杂草一团一团的，涂抹着初春的痕迹。</p>
-                    </div>
-                </a>
-            </div>
+{#            <div class="ArticleClass">#}
+{#                <a href="#" class="card">#}
+{#                    <h5 class="card-header">今天天气很美好</h5>#}
+{#                    <div class="card-body">#}
+{#                        <p class="card-text font-weight-light"> 孤田#}
+{#                            第一次给舅公上坟，走过那丘长长的弯弯的阴冷的荒田，我免不了忆起当年劳动的场景。栽秧薅秧打谷，集体中醒目的与不露声色的勤快、躲懒，开玩笑，一幕幕从眼前走过。#}
+{#                            眼下比较平整的田还没有犁开，杂草一团一团的，涂抹着初春的痕迹。</p>#}
+{#                    </div>#}
+{#                </a>#}
+{#            </div>#}
 
-            <div class="ArticleClass">
-                <a href="#" class="card">
-                    <h5 class="card-header">很美好的一年</h5>
-                    <div class="card-body">
-                        <p class="card-text font-weight-light">
-                            过了谷雨节气，就是立夏的开始了。春天的气息肆意的舒展与连绵不绝，坚韧韧性的倔强的力量在绘制着宏伟而瑰丽的图卷。春天的爱情故事若潮水一般汹涌澎湃，每一个漩涡都那么硬朗的在艰难与焦灼里微笑着，点点的微光照亮了思流的苦涩。每一个民族的天空都拥有着晴云朵朵酸甜的笑纹横亘过岁月的沉淀与洗礼，澄澈的阳光晶莹的散发着浓浓的暖意。</p>
-                    </div>
-                </a>
-            </div>
+
 
         </div>
 
@@ -202,7 +162,7 @@
             <div class="ArticleNavClass">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><h4>Ability</h4></a>
+                        <a class="nav-link" href="{% url 'ability' %}"><h4>Ability</h4></a>
                     </li>
                 </ul>
             </div>

@@ -17,5 +17,5 @@ from django.urls import path, include
 from Ability.views import Ability
 
 urlpatterns = [
-    path('', Ability.as_view()),
+    path('', Ability.as_view(), name='ability'),
 ]

@@ -8,10 +8,10 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/index.css">
-    <script type="text/javascript" src="./js/echarts.min.js"></script>
-    <script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
-    <script type="text/javascript" src="./js/echartsEx.js"></script>
+    <link rel="stylesheet" href="/static/css/index.css">
+    <script type="text/javascript" src="/static/js/echarts.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="/static/js/echartsEx.js"></script>
     <!--    <script type="text/javascript" src="./js/index.js"></script>-->
 
     <title>Small Tadpole</title>
@@ -29,16 +29,16 @@
                 <div class="collapse navbar-collapse col-6" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Program</a>
+                            <a class="nav-link" href="{% url 'program' %}">Program</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Ability</a>
+                            <a class="nav-link" href="{% url 'ability' %}">Ability</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Article</a>
+                            <a class="nav-link" href="{% url 'article' %}">Article</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Life</a>
@@ -55,7 +55,7 @@
         </div>
 
         <div class="jumbotron BigSrceenClass">
-            <h1 class="display-4">Ability！</h1>
+            <h1 class="display-4">Ability</h1>
             <p class="lead">钢是在烈火里燃烧、高度冷却中炼成的，因此它很坚固。我们这一代人也是在斗争中和艰苦考验中锻炼出来的，并且学会了在生活中从不灰心丧气。</p>
         </div>
 
@@ -64,7 +64,7 @@
             <div class="ArticleNavClass">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><h4>Ability</h4></a>
+                        <a class="nav-link" href="{% url 'ability' %}"><h4>Ability</h4></a>
                     </li>
                 </ul>
             </div>
