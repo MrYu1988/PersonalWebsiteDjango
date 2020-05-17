@@ -2,7 +2,6 @@ from django.contrib import admin
 from Program.models import BigProgram, SubProgram
 from PersonalWebsiteDjango.settings import MEDIA_ROOT
 from pydocx import PyDocX
-import re
 
 # Register your models here.
 class BigProgramAdmin(admin.ModelAdmin):

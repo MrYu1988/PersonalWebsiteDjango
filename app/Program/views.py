@@ -1,6 +1,7 @@
 from django.shortcuts import render, HttpResponse
 from django.views.generic import View
 from Program.models import BigProgram,SubProgram
+
 # Create your views here.
 
 class ProgramWeb(View):
@@ -21,4 +22,23 @@ class SubProgramDetail(View):
     def get(self, request, ProgramID, SubProgramID):
         print(ProgramID)
         print(SubProgramID)
-        return render(request, 'ProgramContext.html')
+
+        SubPrograms = SubProgram.objects.filter(id=SubProgramID)
+        if SubPrograms is None:
+            return render(request, 'ProgramContext.html')
+        # 打开html文件内容
+        myfile = SubPrograms[0].SubProgramHtml.open()
+        # 读取文件内容
+        bb = myfile.read()
+        # 关闭文件
+        myfile.close()
+        # 对文件进行解码
+        tempstr = bb.decode('utf-8')
+        # 删除字符串‘body前的内容’
+        tempstr = tempstr[(tempstr.find('<body>') + 6):]
+        # 删除body后的内容
+        tempstr = tempstr[:(tempstr.find('body>') - 2)]
+
+        context = {'body': tempstr,
+                   'SubProgram':SubPrograms[0]}
+        return render(request, 'ProgramContext.html', context)

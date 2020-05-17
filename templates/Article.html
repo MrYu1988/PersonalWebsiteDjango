@@ -8,8 +8,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/index.css">
-    <script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="/static/css/index.css">
+    <script type="text/javascript" src="/static/js/jquery-3.4.1.min.js"></script>
     <!--    <script type="text/javascript" src="./js/index.js"></script>-->
     <title>Small Tadpole</title>
 </head>
@@ -26,16 +26,16 @@
                 <div class="collapse navbar-collapse col-6" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="../index">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Program</a>
+                            <a class="nav-link" href="../program">Program</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Ability</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link  active" href="#">Article</a>
+                            <a class="nav-link  active" href="../article">Article</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Life</a>
@@ -58,60 +58,50 @@
 
         <!--文章-->
         <div class="row col-md-12">
-            <div class="col-md-12">
-                <div class="card text-center">
-                    <div class="card-header">
-                        <h1>Featured</h1>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">Go detail!</a>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.With supporting text below as a natural lead-in to additional contentWith supporting text below as a natural lead-in to additional contentWith supporting text below as a natural lead-in to additional content</p>
-                        <a href="#" class="btn btn-primary">Go detail!</a>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">Go detail!</a>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">Go detail!</a>
+            {% for Article in Articles %}
+                <div class="col-md-12">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            <h1>{{ Article.ArticleID }}</h1>
+                        </div>
+                        {% for ArticleTmp in Article.Articles %}
+                            <div class="card-body">
+                                <h5 class="card-title">{{ ArticleTmp.ArticleName }}</h5>
+                                <p class="card-text">{{ ArticleTmp.ArticleBrief }}</p>
+                                <a href="{{ ArticleTmp.id }}" class="btn btn-primary">Go detail!</a>
+                            </div>
+                        {% endfor %}
                     </div>
                 </div>
-            </div>
-            <div class="col-md-12">
-                <div class="card text-center">
-                    <div class="card-header">
-                        <h1>Featured</h1>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">Go detail!</a>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.With supporting text below as a natural lead-in to additional contentWith supporting text below as a natural lead-in to additional contentWith supporting text below as a natural lead-in to additional content</p>
-                        <a href="#" class="btn btn-primary">Go detail!</a>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">Go detail!</a>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">Go detail!</a>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
+
+            {#            <div class="col-md-12">#}
+            {#                <div class="card text-center">#}
+            {#                    <div class="card-header">#}
+            {#                        <h1>Featured</h1>#}
+            {#                    </div>#}
+            {#                    <div class="card-body">#}
+            {#                        <h5 class="card-title">Special title treatment</h5>#}
+            {#                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>#}
+            {#                        <a href="#" class="btn btn-primary">Go detail!</a>#}
+            {#                    </div>#}
+            {#                    <div class="card-body">#}
+            {#                        <h5 class="card-title">Special title treatment</h5>#}
+            {#                        <p class="card-text">With supporting text below as a natural lead-in to additional content.With supporting text below as a natural lead-in to additional contentWith supporting text below as a natural lead-in to additional contentWith supporting text below as a natural lead-in to additional content</p>#}
+            {#                        <a href="#" class="btn btn-primary">Go detail!</a>#}
+            {#                    </div>#}
+            {#                    <div class="card-body">#}
+            {#                        <h5 class="card-title">Special title treatment</h5>#}
+            {#                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>#}
+            {#                        <a href="#" class="btn btn-primary">Go detail!</a>#}
+            {#                    </div>#}
+            {#                    <div class="card-body">#}
+            {#                        <h5 class="card-title">Special title treatment</h5>#}
+            {#                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>#}
+            {#                        <a href="#" class="btn btn-primary">Go detail!</a>#}
+            {#                    </div>#}
+            {#                </div>#}
+            {#            </div>#}
         </div>
 
 
