@@ -40,7 +40,7 @@ class ArticleDetail(View):
         tempstr = bb.decode('utf-8')
         # 删除字符串‘body前的内容’
         tempstr = tempstr[(tempstr.find('<body>') + 6):]
-        # 删除body后的内容
+        # 删除body后的内容jang
         tempstr = tempstr[:(tempstr.find('body>') - 2)]
 
         context = {'body': tempstr,
