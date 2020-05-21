@@ -95,7 +95,7 @@
                             </div>
                         </a>
                     </div>
-                {% empty %} <h3>无相关内容！</h3>
+                {% empty %} <p>无相关内容！</p>
                 {% endfor %}
                 {#                <div class="col-md-6 cardProgramClass">#}
                 {#                    <a href="#" class="card mb-3 card1Class" style="">#}
@@ -140,7 +140,7 @@
                         </div>
                     </a>
                 </div>
-            {% empty %} <h2>文章内容为空</h2>
+            {% empty %} <p>文章内容为空</p>
             {% endfor %}
 
             {#            <div class="ArticleClass">#}
@@ -179,42 +179,29 @@
                     </li>
                 </ul>
             </div>
+
             <div class="row">
-                <a class="col-md-3 livePhotoClass" href="#">
+                {% for Life in LiftModelsTmp %}
+                <a class="col-3 livePhotoClass" href="{% url 'life' %}">
                     <div class="card lifeClass" style="">
-                        <img src="/static/image/1.jpg" class="card-img-top" alt="...">
+                        <img src="/media/{{ Life.LiftIcon }}" class="card-img-top" alt="{{ Life.LiftName }}">
                         <div class="card-body">
-                            <p class="card-text">这个是美好照片</p>
+                            <p class="card-text">{{ Life.LiftName }}</p>
                         </div>
                     </div>
 
                 </a>
-                <a class="col-md-3" href="#">
-                    <div class="card lifeClass" style="">
-                        <img src="/static/image/1.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">这个是美好照片</p>
-                        </div>
-                    </div>
+                {% empty %}<p>无生活相关内容</p>
+                {% endfor %}
 
-                </a>
-                <a class="col-md-3" href="#">
-
-                    <div class="card lifeClass" style="">
-                        <img src="/static/image/1.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">这个是美好照片</p>
-                        </div>
-                    </div>
-                </a>
-                <a class="col-md-3" href="#">
-                    <div class="card lifeClass" style="">
-                        <img src="/static/image/1.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">这个是美好照片</p>
-                        </div>
-                    </div>
-                </a>
+{#                <a class="col-3" href="#">#}
+{#                    <div class="card lifeClass" style="">#}
+{#                        <img src="/static/image/1.jpg" class="card-img-top" alt="...">#}
+{#                        <div class="card-body">#}
+{#                            <p class="card-text">这个是美好照片</p>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </a>#}
             </div>
         </div>
     </div>
