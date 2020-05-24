@@ -10,7 +10,8 @@
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="/static/css/index.css">
     <script type="text/javascript" src="/static/js/jquery-3.4.1.min.js"></script>
-    <!--    <script type="text/javascript" src="./js/index.js"></script>-->
+    <script type="text/javascript" src="/static/js/index.js"></script>
+{#    <!--    <script type="text/javascript" src="./js/index.js"></script>-->#}
     <title>Small Tadpole</title>
 </head>
 <body>
@@ -51,14 +52,14 @@
             </nav>
         </div>
 
-        <div class="jumbotron BigSrceenClass  col-md-12">
+        <div class="jumbotron BigSrceenClass  col-md-12" id="BigSrceen">
             <h1 class="display-4">{{ Article.ArticleName }}</h1>
             <p class="lead">{{ Article.ArticleBrief }}</p>
         </div>
 
         <!--文章-->
-        <div class="row col-md-12">
-            <div class="col-md-12">
+        <div class="">
+            <div class=""  id="ProgramContextClass">
                 {% autoescape off %}
                     {{ body }}
                 {% endautoescape %}
